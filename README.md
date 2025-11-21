@@ -1,76 +1,199 @@
-                                                           Resume Matcher
+🚀 Resume Matcher — AI-Powered Resume vs Job Description Analyzer
 
-tech stack: Django, Html, Css
-Api Tools used : ollamma, model:"llama3.2"
-virtual env : UV (insted of pip for faster installing packages)
+Resume Matcher is an AI-driven application that compares a candidate’s resume text with a job description and generates a match score, list of missing skills, and a concise summary.
+It helps job seekers understand their skill gaps and assists companies in evaluating candidates more efficiently.
 
+🧠 Features
 
-sync the package with uv : uv sync
-run the model : cd backend && python manage.py runserver
+✔ Compare resume text and job descriptions
 
-Backend server:http://127.0.0.1:8000/
-api server: http://localhost:11434/api/generate
+✔ Generate match score (0–100%)
 
+✔ Detect missing or weak skills
 
-This project is about comapring the two inputs to get the desired results,
-Its focus on comparing resume text by a job seekers with an actual job descriptions.
+✔ AI-generated summary of the comparison
 
-Egs case:
+✔ Local, privacy-friendly AI powered by Ollama
 
-        if resume_text is :"experienced Python developer with Django and Rest Api Skills..."
-        job description is :"Looking for Python developer with experience in Django, Rest Apis and react,"
+✔ Clean input UI using Django Forms + Crispy Forms
 
+🛠 Tech Stack
+Backend
 
-this is two input written by user, and it is written with help of Django forms by crispy forms
+Django
 
+Django Forms
 
+Crispy Forms
 
-and egs result will be:
-            "match_score": 0-100,
-            "missing_skills": [missed skills],
-            "summary": "brief summary"
+Frontend
 
+HTML
 
+CSS
 
+AI
 
-1.AI approach i used, why i choose it ?
+Ollama (local LLM runtime)
 
-->
-The approach is why iam used becuase of it's making large language models (LLMs) easy to run locally on personal machines
+Model: llama3.2
 
-I used ollama api tool for my project beacuase it makes large language models (LLMs) accessible, private, and easy to run locally on personal computers.
-the model i used for this project is "llama3.2" it is one of the best model by ollamma
+Environment
 
+UV (faster alternative to pip for syncing Python packages)
 
+⚙️ Installation & Setup
+1. Clone the repository
+git clone https://github.com/your-username/resume-matcher.git
+cd resume-matcher
 
+2. Sync all dependencies
+uv sync
 
-2.one alternative approach 
-
-->
-Another alternative approach is used restframework for connecting the apps like linkedin, indeed with api, extract the job description data for job seekers,
-it often useful for job seekers to match their skill to understand which skill are they lacking. 
-
-
-3.one limitation
-
-->
-
-the main limitaion of my project is my model "llama3.2" (Meta AI) is designed for small projects, Highly competitive with similar-sized models, good for on-device and local tasks,it often give wrong answers like may fail when trying to call tools, sometimes getting stuck in a loop or failing to provide a text response for simple inputs.
-i used this model it work low  ram system, But if you have high ram system use gemma 2 (Google),it  Designed for high performance and efficiency, with the 2B model surpassing many GPT-3.5 models.
+3. Run the Django backend
+cd backend
+python manage.py runserver
 
 
+Backend server will be available at:
+👉 http://127.0.0.1:8000/
 
+4. Start the Ollama AI server
 
+Make sure Ollama is installed and running:
 
-4.improvement idea or next step enhancement
+AI API server:
+👉 http://localhost:11434/api/generate
 
--> 
-as i mention earlier, my first improvement will be updating the model, or used chatgpt with api key for better results.
-next step enhancement will be updating ui with modern laguage like react and connecting both backend to frontend with restframework.
-and also implement login and signup page.
+🧪 Example Input & Output
+Input
 
-last step will hosted the website , comapnies would often useful for matching the required skills and missed skills, eliminated lack skilled employee,
-and can hiring very fastly with this website , it can help to save time 
+Resume Text:
 
+“Experienced Python developer with Django and REST API skills.”
 
-        
+Job Description:
+
+“Looking for a Python developer with experience in Django, REST APIs, and React.”
+
+Output
+{
+  "match_score": 82,
+  "missing_skills": ["React"],
+  "summary": "Candidate matches core Python, Django, and API skills but lacks React experience."
+}
+
+🧠 Why Ollama + Llama 3.2?
+
+Runs LLMs locally
+
+100% private (no data leaves your machine)
+
+Lightweight and ideal for low–medium RAM systems
+
+Easy to integrate with Django
+
+Fast inference for text-based tasks
+
+🔄 Alternative Approach
+
+A more advanced version of this project could:
+
+Use Django REST Framework
+
+Integrate APIs from:
+
+LinkedIn
+
+Indeed
+
+Naukri
+
+Glassdoor
+
+This would enable automatic extraction of real job descriptions and real-time resume matching.
+
+⚠️ Limitations
+
+Using the lightweight llama3.2 model introduces some constraints:
+
+May produce inconsistent or inaccurate answers
+
+Limited reasoning capabilities
+
+Can struggle with tool-calling or complex queries
+
+Not suitable for enterprise-scale workloads
+
+For better performance, upgrade to:
+
+Gemma 2 (Google)
+
+GPT-4 / GPT-4o (OpenAI)
+
+Llama 3.1 (70B)
+
+🚀 Future Enhancements
+🔧 1. Stronger AI Model
+
+Upgrade to larger or cloud-based LLMs for better accuracy.
+
+🎨 2. Modern Frontend
+
+Rebuild UI using:
+
+React
+
+Tailwind CSS
+
+Next.js
+
+🔐 3. Authentication System
+
+Add:
+
+Login
+
+Signup
+
+Saved history of comparisons
+
+Resume upload (PDF → text extraction)
+
+🏢 4. Employer Dashboard
+
+Upload job descriptions
+
+Auto-screen multiple resumes
+
+Filter candidates based on match score
+
+🌍 5. Deployment
+
+Deploy to:
+
+Render
+
+Railway
+
+DigitalOcean
+
+Docker containers
+
+🏁 Conclusion
+
+Resume Matcher helps both job seekers and HR teams:
+
+Understand skill gaps
+
+Speed up initial screening
+
+Improve hiring accuracy
+
+Save time by automating comparison
+
+This project demonstrates practical use of AI, Django, and local LLMs to solve real-world problems.
+
+⭐ Like this project?
+
+If you find it useful, consider giving it a star ⭐ on GitHub!
