@@ -1,0 +1,11 @@
+body {
+    background-color: #f7f7f7;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+textarea {
+    font-size: 14px;
+}
